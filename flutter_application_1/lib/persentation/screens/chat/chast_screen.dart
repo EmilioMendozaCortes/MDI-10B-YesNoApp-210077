@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/persentation/widgets/chat/my_message_bubble.dart';
+import 'package:flutter_application_1/persentation/widgets/chat/other_message_bubble.dart';
+import 'package:flutter_application_1/persentation/widgets/shared/message_field_box.dart';
 
 class ChastScreen extends StatelessWidget {
   const ChastScreen({super.key});
@@ -30,13 +33,16 @@ class _ChatView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            Expanded(child: ListView.builder(
-              itemCount: 100,
-              itemBuilder: (context, index) {
-                return Text('Indice: $index');
-              }
-            )),
-            Text('Mundo')
+            Expanded(
+                child: ListView.builder(
+                    itemCount: 100,
+                    itemBuilder: (context, index) {
+                      return (index % 2 == 0)
+                          ? const OtherMessageBubble()
+                          : const MyMessageBubble();
+                    })),
+
+            const MessageFieldBox(),
           ],
         ),
       ),

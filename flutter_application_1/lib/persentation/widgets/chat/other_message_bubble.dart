@@ -8,7 +8,7 @@ class OtherMessageBubble extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           decoration: BoxDecoration(
